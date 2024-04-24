@@ -1,11 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LotoDrive tournament</title>
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Manrope:wght@200..800&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/theming.css">
+    <link rel="stylesheet" href="/css/sections-layout.css">
 </head>
+
 <body>
-    
+
+    <div class="container">
+        <header class="header">
+            <div class="buttons-wrapper">
+                <button class="container-controls accent-button skewed-button skewed-button--small" id="left">
+                    <svg width="11" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="m10 19-9-9 9-9" stroke="#fff" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <span class="visually-hidden">назад</span></button>
+                <button class="container-controls accent-button skewed-button skewed-button--small" id="right">
+                    <svg width="11" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="m1 1 9 9-9 9" stroke="#fff" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <span class="visually-hidden">вперед</span>
+                </button>
+            </div>
+            <h2 class="header-current-title"></h2>
+            <button class="burger closed accent-button skewed-button skewed-button--small">
+                <svg width="25" height="14" viewBox="0 0 25 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1h23M1 7h23M1 13h23" stroke="#fff" stroke-width="2" stroke-linecap="round" />
+                </svg>
+                <span class="visually-hidden">открыть меню</span>
+            </button>
+        </header>
+        <main>
+            <section class="burger-menu">
+                <div class="burger-wrapper">
+                    <button class="burger closed skewed-button skewed-button--small secondary-button">
+                        <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="m1.246 14.882 14.51-13.765M1.246 1.117l14.537 13.737" stroke="#fff"
+                                stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                        <span class="visually-hidden">закрыть меню</span>
+                    </button>
+                </div>
+                <menu>
+                    <li><a href="#"
+                            class="burger-link burger-main-page-link skewed-button secondary-button"><span>Главная</span></a>
+                    </li>
+                    <li><a href="#section2" class="burger-link skewed-button secondary-button"
+                            data-section="section2"><span>Рейтинг</span></a></li>
+                    <li><a href="#section3" class="burger-link skewed-button secondary-button"
+                            data-section="section3"><span>Лотереи</span></a></li>
+                    <li><a href="#section4" class="burger-link skewed-button secondary-button"
+                            data-section="section4"><span><abbr title="часто задаваемые вопросы">FAQ</abbr></span></a>
+                    </li>
+                    <li><a href="#section5" class="burger-link skewed-button secondary-button"
+                            data-section="section5"><span>Призовой фонд</span></a></li>
+                    <li><a href="#section6" class="burger-link skewed-button secondary-button"
+                            data-section="section6"><span>Инфо</span></a></li>
+                </menu>
+            </section>
+            <section class="main-page open">
+                <!-- <picture>
+                    <source srcset="/assets/main-bg.avif 1x, /assets/main-bg-x2.avif 2x" type="image/avif">
+                    <img class="main-page-decor" src="/assets/main-bg.png" srcset="/assets/main-bg-x2.png 2x" alt aria-hidden="true">
+                </picture> -->
+                <div class="inner-wrapper">
+                    <div class="burger-wrapper">
+                        <button class="burger closed skewed-button skewed-button--small accent-button">
+                            <svg width="25" height="14" viewBox="0 0 25 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1h23M1 7h23M1 13h23" stroke="#fff" stroke-width="2"
+                                    stroke-linecap="round" />
+                            </svg>
+                            <span class="visually-hidden">открыть меню</span>
+                        </button>
+                    </div>
+                    <!-- <picture>
+                        <source srcset="/assets/ld-logo.avif" type="image/avif">
+                        <img srcset="/assets/ld-logo.png" alt="Лото драйв турнир">
+                    </picture> -->
+                    <div class="main-page-bottom">
+                        <div class="info-wrapper">
+                            <p class="info-item prize">
+                                <span class="info-title">Призовой фонд:</span>
+                                <span class="info-value js-prize-value">10 000 000 ₸</span>
+                            </p>
+                            <p class="info-item timer">
+                                <span class="info-title">До финиша:</span>
+                                <span class="info-value js-timer-value">2 д. 4 ч. 23 м.</span>
+                            </p>
+                        </div>
+                        <a href="#section2" data-section="section2"
+                            class="button main-page-link skewed-button accent-button">Перейти к черепашкам</a>
+                        <a href="#" class="rules download-link" target="_blank">Посмотреть правила</a>
+                    </div>
+                </div>
+            </section>
+            <div class="slider" id="slider">
+                <section class="section" id="section2" data-section-name="Рейтинг" draggable="false"
+                    style="position: relative;">
+                    <div class="marker"></div>
+                    <div class="inner-section-container">
+                        <section class="winners">
+                            <div class="winners-container">
+                                <h2 class="title">победители Lotodrive 12.01</h2>
+                                <ol class="winners-list" role="list">
+                                </ol>
+                            </div>
+                        </section>
+                        <section class="winners-rating">
+                            <div class="winners-container">
+                                <h2 class="title">Текущий рейтинг</h2>
+                                <div class="rating-list-wrapper">
+                                    <ol class="rating-list" role="list"></ol>
+                                    <div class="current-player-wrapper" id="current-player-wrapper">
+                                        <div class="current-player-title">
+                                            <span class="current-player-label">мое место</span> 
+                                            <span class="current-player-place">00</span>
+                                        </div>
+                                        <div class="current-player-score-wrapper">
+                                            <span class="current-player-label">Выигрыш:</span>
+                                            <span class="current-player-score">00</span>
+                                        </div>
+                                        <button type="button" class="current-player-action skewed-button accent-button" role="button">
+                                            <span>показать</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+                <section class="section games" id="section3" data-section-name="Лотереи" draggable="false">
+                    <div class="marker"></div>
+                    <div class="inner-section-container">
+                        <ul class="games-list">
+                            <li class="games-item">
+                                <a href="" title="перейти к игре" target="_blank">
+                                    <img src="/assets/games/expr-649.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="games-item">
+                                <a href="" title="перейти к игре" target="_blank">
+                                    <img src="/assets/games/expr-649.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="games-item">
+                                <a href="" title="перейти к игре" target="_blank">
+                                    <img src="/assets/games/expr-649.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="games-item">
+                                <a href="" title="перейти к игре" target="_blank">
+                                    <img src="/assets/games/expr-649.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="games-item">
+                                <a href="" title="перейти к игре" target="_blank">
+                                    <img src="/assets/games/expr-649.svg" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="section" id="section4" data-section-name="faq" draggable="false">
+                    <div class="marker"></div>
+                    <div class="inner-section-container">
+                        <h2 class="accent-title">Часто задаваемые вопросы</h2>
+                        <ul class="faq-list">
+                            <li>
+                                <button type="button" class="js-toggle"><span>Что такое "LotoDrive"</span></button>
+                                <div class="panel">
+                                    <h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h3>
+                                    <p>
+                                        Ut saepe vel minus sapiente eius quas hic quia dolorum beatae explicabo?
+                                        Corporis voluptate
+                                        quas neque vero repudiandae. Fugit corporis iste amet.
+                                    </p>
+                                    <h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h3>
+                                    <p>
+                                        Ut saepe vel minus sapiente eius quas hic quia dolorum beatae explicabo?
+                                        Corporis voluptate
+                                        quas neque vero repudiandae. Fugit corporis iste amet.
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <button type="button" class="js-toggle"><span>Lorem, ipsum dolor.</span></button>
+                                <div class="panel">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore,
+                                    dolor.</div>
+                            </li>
+                            <li>
+                                <button type="button" class="js-toggle"><span>Lorem ipsum dolor sit amet consectetur
+                                        adipisicing.</span></button>
+                                <div class="panel">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi maxime
+                                    praesentium nam, quasi distinctio fugiat molestias facilis illo. Commodi fugiat
+                                    minima non. Reprehenderit reiciendis voluptatem, cupiditate commodi amet minima
+                                    nulla.
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque iure expedita
+                                    tempore, neque beatae quae in impedit eligendi natus maxime dignissimos voluptatibus
+                                    reprehenderit perferendis quo corrupti facilis non tenetur repellendus!</div>
+                            </li>
+                        </ul>
+
+                    </div>
+                </section>
+                <section class="section" id="section5" data-section-name="Призы" draggable="false">
+                    <div class="marker"></div>
+                    <h2 class="visually-hidden">Section 5</h2>
+                </section>
+                <section class="section" id="section6" data-section-name="Инфо" draggable="false">
+                    <div class="marker"></div>
+                    <div class="inner-section-container">
+                        <div class="info-list" role="list">
+                            <div class="info-list-item" role="listitem">
+                                <div class="info-item-decor">
+                                    <img src="/assets/fuel.svg" width="56" alt aria-hidden="true">
+                                </div>
+                                <div class="info-item-text">
+                                    <h3 class="info-item-title">Покупайте</h3>
+                                    <p class="info-item-descr">Покупайте билеты классических&nbsp;лотерей</p>
+                                </div>
+                            </div>
+                            <div class="info-list-item" role="listitem">
+                                <div class="info-item-decor">
+                                    <img src="/assets/accumulator.svg" width="69" alt aria-hidden="true">
+                                </div>
+                                <div class="info-item-text">
+                                    <h3 class="info-item-title">Покупайте</h3>
+                                    <p class="info-item-descr">Покупайте билеты классических&nbsp;лотерей</p>
+                                </div>
+                            </div>
+                            <div class="info-list-item" role="listitem">
+                                <div class="info-item-decor">
+                                    <img src="/assets/finish.svg" width="70" alt aria-hidden="true">
+                                </div>
+                                <div class="info-item-text">
+                                    <h3 class="info-item-title">Покупайте</h3>
+                                    <p class="info-item-descr">Покупайте билеты классических&nbsp;лотерей</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <template id="player-template">
+        <li class="item">
+            <div class="inner">
+                <span class="place"></span>
+                <div class="winner-avatar">
+                    <!-- <img src="#"> -->
+                </div>
+                <div class="score-wrapper">
+                    <span class="label">Выигрыш:</span>
+                    <span class="score"></span>
+                </div>
+                <div class="nick-wrapper">
+                    <span class="label">Никнейм:</span>
+                    <span class="nick"></span>
+                </div>
+            </div>
+        </li>
+    </template>
+    <template id="winner-template">
+        <li class="item">
+            <div class="winner-avatar">
+                <!-- <img src="#"> -->
+            </div>
+            <div class="inner">
+                <span class="place"></span>
+                <div class="nick-wrapper">
+                    <span class="label">Никнейм:</span>
+                    <span class="nick"></span>
+                </div>
+            </div>
+        </li>
+    </template>
+    <script src="/js/slider.js"></script>
+    <script src="/js/accordeon.js"></script>
+    <script src="/js/nav.js" defer></script>
 </body>
+
 </html>

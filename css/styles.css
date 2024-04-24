@@ -1,0 +1,180 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  color: #fff;
+  background-color: #1F1F26;
+  background-image:
+    linear-gradient(45deg, #17171D 25%, transparent 25%, transparent 75%, #17171D 75%, #17171D),
+    linear-gradient(45deg, #17171D 25%, transparent 25%, transparent 75%, #17171D 75%, #17171D);
+  background-position: 0 0, 25px 25px;
+  background-size: 50px 50px;
+}
+main {
+  overflow-x: hidden;
+}
+
+abbr {
+  text-decoration: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 690px;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 60px 16px 0;
+  position: relative;
+}
+
+.header {
+  position: sticky;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  top: 0;
+
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(rgba(29 36 36 / .8), rgba(29 36 36 / .8));
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: scaleY(0);
+  transition: transform 0.3s ease-in-out;
+  transform-origin: bottom;
+}
+
+.header.bkg-col::before {
+  transform: scaleY(1);
+}
+
+.buttons-wrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+
+.slider {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  top: 60px;
+  bottom: 0;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+}
+
+.slider::-webkit-scrollbar {
+  appearance: none;
+}
+
+.slider.no-transition {
+  scroll-behavior: auto;
+}
+
+.slider.dragging {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+
+.slider.dragging .section {
+  cursor: grab;
+  user-select: none;
+}
+
+.section {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+
+.section::-webkit-scrollbar {
+  appearance: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.main-page,
+.burger-menu {
+  position: absolute;
+  z-index: 10;
+  top: 60px;
+  left: 16px;
+  bottom: 0;
+  right: 16px;
+  transform: translateY(-300%);
+  transition: transform .7s ease-in-out;
+}
+
+.main-page.open,
+.burger-menu.open {
+  transform: translateY(0);
+}
+
+
+:where(.main-page, .burger-menu) a {
+  display: block;
+
+}
+
+.container:has(section.main-page.open) :where(.header, .slider),
+.container:has(section.burger-menu.open) :where(.header, .slider, .main-page) {
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+}
+
+@media (min-width: 820px) {
+  body {
+    margin: 0;
+    background-color: #1F1F26;
+    background-image:
+      linear-gradient(45deg, #17171D 25%, transparent 25%, transparent 75%, #17171D 75%, #17171D),
+      linear-gradient(45deg, #17171D 25%, transparent 25%, transparent 75%, #17171D 75%, #17171D);
+    background-position: 0 0, 40px 40px;
+    background-size: 80px 80px;
+  }
+}

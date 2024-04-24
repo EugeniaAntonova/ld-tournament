@@ -1,0 +1,704 @@
+.inner-section-container {
+    margin-top: 72px;
+    padding-top: 40px;
+}
+
+.accent-title {
+    margin: 0 0 1.1em;
+    font-size: 18px;
+    font-weight: 700;
+    font-style: italic;
+    text-transform: uppercase;
+    line-height: 115%;
+    letter-spacing: .05em;
+    text-align: left;
+
+    color: #FF4A26;
+}
+
+/* ====================================================================================================== burger-menu */
+.burger-menu menu {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    width: 100%;
+}
+.burger-menu menu>li {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* ======================================================================================================= main-page */
+section.main-page .inner-wrapper,
+section.burger-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section.main-page .inner-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.main-page .burger-wrapper, 
+.burger-menu .burger-wrapper {
+    height: 72px;
+    margin-bottom: 1em;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.main-page-decor {
+    position: absolute;
+    min-width: 770px;
+    top: -414px;
+    left: -217px;
+}
+
+.main-page-bottom {
+    width: 100%;
+    margin-top: auto;
+    padding-block: 44px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5em;
+}
+
+.main-page-bottom .info-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5em;
+}
+
+.info-item {
+    padding-left: 54px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+}
+
+.info-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    width: 42px;
+    height: 32px;
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url('/assets/prize-icon.svg');
+}
+
+.info-title {
+    font-size: .7em;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #A6A6A6;
+    letter-spacing: .05em;
+    line-height: 1.2;
+}
+
+/* ======================================================================================================= rating */
+.winners-container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.rating-list-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 56px;
+}
+
+ol.rating-list {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ol.rating-list>li {
+    padding: 8px 34px 8px 16px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #27272D;
+    border: 1px solid rgba(128 128 159 / .5);
+}
+
+ol.rating-list>li:not(:last-child) {
+    margin-bottom: 6px;
+}
+
+
+ol.rating-list>li>.inner {
+    display: flex;
+    align-items: center;
+    gap: .5em;
+}
+
+ol.rating-list>li .nick-wrapper {
+    width: 55%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+ol.rating-list>li .score-wrapper {
+    min-width: 28%;
+    margin-left: auto;
+}
+
+ol.rating-list>li .label,
+ol.winners-list>li .label {
+    display: block;
+    margin-bottom: auto;
+    font-size: 12px;
+    font-weight: 700;
+    font-style: italic;
+    text-transform: uppercase;
+    color: rgba(255 255 255 / 0.5);
+}
+
+ol.rating-list>li .nick,
+ol.rating-list>li .score,
+ol.winners-list>li .nick,
+ol.winners-list>li .score {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+ol.rating-list>li .place {
+    display: block;
+    width: 44px;
+    margin: auto 0;
+    margin-right: 28px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+ol.rating-list>li:nth-child(-n+5) {
+    padding: 14px;
+    padding-right: 40px;
+    position: relative;
+    border-color: #FF3627;
+}
+
+ol.rating-list>li:nth-child(-n+5)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 49px;
+    height: 90%;
+    background-image: url('../assets/flag.png');
+    background-repeat: no-repeat;
+    background-position: -65px -112px;
+}
+
+ol.rating-list>li:nth-child(-n+5) .place {
+    width: 20px;
+    margin: 0;
+    margin-bottom: auto;
+    font-size: 32px;
+    line-height: 0.7;
+    color: #FF3627;
+}
+
+ol.rating-list>li.current-player {
+    scroll-margin: 50vh 0 50vh 0;
+    background-image: var(--basic-gradient);
+}
+
+ol.rating-list>li:nth-child(-n+5) .winner-avatar {
+    width: 48px;
+    height: 48px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background-color: var(--basic-gray);
+}
+
+.hidden {
+    display: none;
+}
+
+.current-player-wrapper {
+    padding: 17px 14px 14px;
+    position: sticky;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #17171B;
+    border: 1px solid #FF3627;
+    border-bottom: none;
+    border-radius: .5em .5em 0 0;
+
+}
+
+.current-player-title, 
+.current-player-score-wrapper {
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+}
+
+.current-player-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: rgba(255 255 255 / .5);
+    font-style: italic;
+    margin-bottom: 4px;
+} 
+
+.current-player-score, 
+.current-player-place {
+    font-size: 16px;
+    font-weight: 800;
+    font-style: italic;
+}
+
+.current-player-score {
+    color: #FF3627;
+}
+
+.current-player-action {
+    width: 100px;
+    height: 40px;
+    font-size: 12px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.current-player-action.ready {
+    pointer-events: all;
+    opacity: 1;
+}
+
+
+#scroll-to-me-link,
+#scroll-up-link {
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+}
+
+/* winners */
+section.winners {
+    margin-bottom: 40px;
+}
+
+section.winners .winners-container {
+    padding-right: 0;
+}
+
+section.winners .title, 
+section.winners-rating .title {
+    font-size: 17px;
+    font-weight: 700;
+    font-style: italic;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+section.winners .title {
+    position: relative;
+    padding-left: 32px;
+}
+
+section.winners .title::before {
+    content: "";
+    position: absolute;
+    width: 32px;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-image: url('../assets/cup.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 15px 21px;
+}
+
+.winners-list {
+    list-style: none;
+    margin: 0;
+    padding: 0 16px 0 0;
+    display: flex;
+    gap: 12px;
+    overflow-y: scroll;
+}
+
+.winners-list::-webkit-scrollbar {
+    display: none;
+}
+
+.winners-list {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+ol.winners-list li.item {
+    padding-top: 42px;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+ol.winners-list li.item {
+    position: relative;
+}
+
+ol.winners-list li.item .inner {
+    width: 112px;
+    padding: 74px 10px 32px;
+    position: relative;
+    background-color: #27272D;
+    background-image: url('../assets/winners-flag.png');
+    background-repeat: no-repeat;
+    background-position: -74px -119px;
+    border-radius: 8px;
+    border: 1px solid #FF3627;
+    overflow: hidden;
+}
+
+ol.winners-list li .winner-avatar {
+    width: 87px;
+    height: 87px;
+    overflow: hidden;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background-color: #161D1D;
+}
+
+ol.winners-list>li .nick-wrapper {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 38px;
+}
+
+ol.winners-list>li .place {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    padding-top: 5px;
+    padding-left: 15px;
+    right: -30px;
+    bottom: -30px;
+    font-size: 24px;
+    font-weight: 800;
+    color: #FF3627;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* ======================================================================================================= lotteries */
+.games-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+.games-item>a {
+    display: block;
+    padding: 1.5em 1em;
+    background-color: #27272D;
+    border-radius: 1em;
+    border: 1px solid #FF3627;
+}
+.games-item>a>img {
+    display: block;
+    flex-shrink: 0;
+    width: 120px;
+    margin: 0 auto;
+}
+/* ======================================================================================================= faq */
+ul.faq-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.faq-list>li {
+    background-color: var(--darker-gray);
+    border-radius: 10px;
+    color: #fff;
+    font-style: italic;
+}
+
+.faq-list>li>button::after {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M10 0C4.478 0 0 4.478 0 10s4.478 10 10 10 10-4.478 10-10S15.522 0 10 0Zm0 2.478c3.322 0 6.148 2.166 7.14 5.158H2.86C3.852 4.642 6.678 2.478 10 2.478ZM2.478 10h2.906l.366 1.718c.038.184.096.36.166.526l-2.072 2.072a7.48 7.48 0 0 1-1.366-4.318V10Zm3.01 6.014 2.164-2.164c.288.096.596.148.912.148h2.866c.318 0 .624-.052.912-.148l2.164 2.164a7.48 7.48 0 0 1-4.51 1.506 7.488 7.488 0 0 1-4.51-1.506h.002Zm10.666-1.698-2.072-2.072c.072-.168.128-.344.166-.526L14.614 10h2.906a7.484 7.484 0 0 1-1.366 4.318v-.002Z' fill='%23ffffff'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position: 50% 50%;
+    vertical-align: middle;
+    margin-left: auto;
+}
+
+.faq-list>li:not(:last-of-type) {
+    margin-bottom: 20px;
+}
+
+.faq-list>li button {
+    padding: 1em;
+    width: 100%;
+    font-size: inherit;
+    font-weight: 600;
+    font-style: italic;
+    text-transform: uppercase;
+    color: inherit;
+    border-radius: 10px;
+    background-color: var(--basic-gray);
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline-color: #fff;
+    outline-offset: -3px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.faq-list>li button>span {
+    max-width: 70%;
+    pointer-events: none;
+}
+.faq-list>li .panel {
+    padding: 0 1em;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .5s ease-in-out, padding .5s ease-in-out;
+}
+
+.faq-list>li .panel h3 {
+    font-size: 1em;
+    font-weight: 600;
+    margin: 0 0 .5em;
+}
+
+.faq-list>li .panel p {
+    margin: 0;
+}
+
+.faq-list>li .panel p:not(:last-of-type) {
+    margin-bottom: 1.2em;
+}
+
+.faq-list>li.opened .panel {
+    padding: 1em;
+}
+
+/* =================================================================================================== info */
+.info-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.info-list-item {
+    display: flex;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em;
+}
+
+.info-item-text {
+    max-width: min-content;
+}
+
+.info-item-title {
+    margin: 0;
+    margin-bottom: 0.5em;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-style: italic;
+    font-weight: 700;
+    letter-spacing: .05;
+    color: #FF3627;
+}
+
+.info-item-descr {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+
+@media (min-width: 820px) {
+
+    .rating-list-wrapper {
+        padding-bottom: 90px;
+    }
+
+    ol.rating-list>li {
+        padding-right: 140px;
+    }
+    
+    ol.rating-list>li:not(:last-child) {
+        margin-bottom: 10px;
+    }
+
+    ol.rating-list>li .place {
+        font-size: 40px;
+        width: 106px;
+    }
+
+    ol.rating-list>li .label {
+        font-size: 18px;
+    }
+
+    ol.rating-list>li .nick,
+    ol.rating-list>li .score {
+        font-size: 20px;
+    }
+
+    ol.rating-list>li:nth-child(-n+5) .place {
+        font-size: 36px;
+    }
+
+    ol.rating-list>li:nth-child(-n+5) {
+        padding-right: 140px;
+    }
+
+    ol.rating-list>li:nth-child(-n+5)::before {
+        width: 100px;
+        background-position: -70px -157px;
+    }
+
+    .current-player-wrapper {
+        padding: 1em 2em;
+    }
+
+    .current-player-title {
+        font-size: 32px;
+    }
+
+    .current-player-score {
+        font-size: 20px;
+    }
+
+    .current-player-action {
+        width: 151px;
+        height: 54px;
+        font-size: 20px;
+    }
+
+    /* winners */
+    section.winners {
+        margin-bottom: 50px;
+        padding-top: 50px;
+    }
+
+    section.winners .title::before {
+        background-size: 26px 36px;
+    }
+
+    ol.winners-list {
+        min-width: 100%;
+        justify-content: space-between;
+    }
+
+    ol.winners-list>li.item .inner {
+        padding-bottom: 56px;
+    }
+
+    ol.winners-list>li .nick-wrapper,
+    ol.winners-list>li .score-wrapper {
+        min-height: 42px;
+    }
+
+    ol.winners-list>li .label,
+    ol.winners-list>li .nick,
+    ol.winners-list>li .score {
+        font-size: 16px;
+    }
+
+    ol.winners-list>li.item .place {
+        right: -16px;
+        bottom: -16px;
+        padding-top: 7px;
+        padding-left: 20px;
+        font-size: 36px;
+    }
+
+    /* ====================================================  lotteries */
+    .games-list {
+        padding: 0 24px;
+    }
+    .games-list {
+        gap: 40px;
+    }
+    
+    
+    .games-item>a {
+        display: block;
+        padding: 2.5em 2em;
+    }
+    .games-item>a>img {
+        flex-shrink: 0;
+        width: 227px;
+    }
+
+    /* ==================================================== info */
+    .info-list {
+        gap: 60px;
+    }
+    .info-item:nth-child(1).info-item-decor>img {
+        width: 113px;
+    }
+    .info-item:nth-child(2).info-item-decor>img {
+        width: 139px;
+    }
+    .info-item:nth-child(3).info-item-decor>img {
+        width: 141px;
+    }
+    .info-item-title {
+        font-size: 32px;
+    }
+    
+    .info-item-descr {
+        font-size: 24px;
+    }
+}
