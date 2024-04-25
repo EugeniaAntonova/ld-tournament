@@ -17,6 +17,12 @@ body {
   background-position: 0 0, 25px 25px;
   background-size: 50px 50px;
 }
+
+*::selection {
+  color: #fff;
+  background-color: #FF3627;
+}
+
 main {
   overflow-x: hidden;
 }
@@ -39,7 +45,7 @@ abbr {
   overflow: hidden;
 }
 
-.container {
+.site-main-container {
   width: 100%;
   max-width: 690px;
   height: 100vh;
@@ -48,7 +54,7 @@ abbr {
   position: relative;
 }
 
-.header {
+.inner-header {
   position: sticky;
   z-index: 10;
   left: 0;
@@ -61,12 +67,12 @@ abbr {
   justify-content: space-between;
 }
 
-.header::before {
+.inner-header::before {
   content: "";
   position: absolute;
   z-index: -1;
   inset: 0;
-  background: linear-gradient(rgba(29 36 36 / .8), rgba(29 36 36 / .8));
+  background: linear-gradient(#1F1F26, #1F1F26);
   background-repeat: no-repeat;
   background-size: cover;
   transform: scaleY(0);
@@ -74,7 +80,7 @@ abbr {
   transform-origin: bottom;
 }
 
-.header.bkg-col::before {
+.inner-header.bkg-col::before {
   transform: scaleY(1);
 }
 
@@ -161,8 +167,8 @@ img {
 
 }
 
-.container:has(section.main-page.open) :where(.header, .slider),
-.container:has(section.burger-menu.open) :where(.header, .slider, .main-page) {
+.site-main-container:has(section.main-page.open) :where(.inner-header, .slider),
+.site-main-container:has(section.burger-menu.open) :where(.inner-header, .slider, .main-page) {
   opacity: 0;
   transition: opacity .3s ease-in-out;
 }
@@ -176,5 +182,18 @@ img {
       linear-gradient(45deg, #17171D 25%, transparent 25%, transparent 75%, #17171D 75%, #17171D);
     background-position: 0 0, 40px 40px;
     background-size: 80px 80px;
+  }
+
+  .site-main-container {
+    padding: 100px 16px 0;
+  }
+
+  .slider {
+    top: 100px;
+  }
+
+  .main-page,
+  .burger-menu {
+    top: 100px;
   }
 }

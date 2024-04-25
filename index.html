@@ -17,8 +17,8 @@
 
 <body>
 
-    <div class="container">
-        <header class="header">
+    <div class="site-main-container">
+        <header class="inner-header">
             <div class="buttons-wrapper">
                 <button class="container-controls accent-button skewed-button skewed-button--small" id="left">
                     <svg width="11" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -71,10 +71,6 @@
                 </menu>
             </section>
             <section class="main-page open">
-                <!-- <picture>
-                    <source srcset="/assets/main-bg.avif 1x, /assets/main-bg-x2.avif 2x" type="image/avif">
-                    <img class="main-page-decor" src="/assets/main-bg.png" srcset="/assets/main-bg-x2.png 2x" alt aria-hidden="true">
-                </picture> -->
                 <div class="inner-wrapper">
                     <div class="burger-wrapper">
                         <button class="burger closed skewed-button skewed-button--small accent-button">
@@ -86,10 +82,10 @@
                             <span class="visually-hidden">открыть меню</span>
                         </button>
                     </div>
-                    <!-- <picture>
+                    <picture>
                         <source srcset="/assets/ld-logo.avif" type="image/avif">
                         <img srcset="/assets/ld-logo.png" alt="Лото драйв турнир">
-                    </picture> -->
+                    </picture>
                     <div class="main-page-bottom">
                         <div class="info-wrapper">
                             <p class="info-item prize">
@@ -102,7 +98,7 @@
                             </p>
                         </div>
                         <a href="#section2" data-section="section2"
-                            class="button main-page-link skewed-button accent-button">Перейти к черепашкам</a>
+                            class="button main-page-link skewed-button accent-button"><span>Перейти к черепашкам</span></a>
                         <a href="#" class="rules download-link" target="_blank">Посмотреть правила</a>
                     </div>
                 </div>
@@ -126,14 +122,15 @@
                                     <ol class="rating-list" role="list"></ol>
                                     <div class="current-player-wrapper" id="current-player-wrapper">
                                         <div class="current-player-title">
-                                            <span class="current-player-label">мое место</span> 
+                                            <span class="current-player-label">мое место</span>
                                             <span class="current-player-place">00</span>
                                         </div>
                                         <div class="current-player-score-wrapper">
                                             <span class="current-player-label">Выигрыш:</span>
                                             <span class="current-player-score">00</span>
                                         </div>
-                                        <button type="button" class="current-player-action skewed-button accent-button" role="button">
+                                        <button type="button" class="current-player-action skewed-button accent-button"
+                                            role="button">
                                             <span>показать</span>
                                         </button>
                                     </div>
@@ -180,7 +177,8 @@
                         <h2 class="accent-title">Часто задаваемые вопросы</h2>
                         <ul class="faq-list">
                             <li>
-                                <button type="button" class="js-toggle"><span>Что такое "LotoDrive"</span></button>
+                                <button type="button" class="js-toggle secondary-button"><span>Что такое
+                                        "LotoDrive"</span></button>
                                 <div class="panel">
                                     <h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h3>
                                     <p>
@@ -197,12 +195,14 @@
                                 </div>
                             </li>
                             <li>
-                                <button type="button" class="js-toggle"><span>Lorem, ipsum dolor.</span></button>
+                                <button type="button" class="js-toggle secondary-button"><span>Lorem, ipsum
+                                        dolor.</span></button>
                                 <div class="panel">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore,
                                     dolor.</div>
                             </li>
                             <li>
-                                <button type="button" class="js-toggle"><span>Lorem ipsum dolor sit amet consectetur
+                                <button type="button" class="js-toggle secondary-button"><span>Lorem ipsum dolor sit
+                                        amet consectetur
                                         adipisicing.</span></button>
                                 <div class="panel">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi maxime
                                     praesentium nam, quasi distinctio fugiat molestias facilis illo. Commodi fugiat
@@ -216,9 +216,66 @@
 
                     </div>
                 </section>
-                <section class="section" id="section5" data-section-name="Призы" draggable="false">
+                <section class="section prizes" id="section5" data-section-name="Призы" draggable="false">
                     <div class="marker"></div>
-                    <h2 class="visually-hidden">Section 5</h2>
+                    <div class="inner-section-container">
+                        <div class="prizes-top">
+                            <img class="prizes-top-decor" src="/assets/finish.svg" width="82" alt aria-hidden="true">
+                            <p class="prizes-top-descr">
+                                Призовой&nbsp;фонд&nbsp;будет
+                                распределен&nbsp;между
+                                <u>топ&nbsp;100</u>&nbsp;участниками
+                            </p>
+                        </div>
+                        <div class="prizes-table" role="table">
+                            <div class="prizes-table-head" role="row">
+                                <span>Место</span>
+                                <span>Победителей</span>
+                                <span>Приз</span>
+                            </div>
+                            <div class="prizes-table-content" role="row">
+                                <span>1 место</span>
+                                <span>1</span>
+                                <span class="js-prizes-prize">2 000 000 ₸</span>
+                            </div>
+                            <div class="prizes-table-content" role="row">
+                                <span>2 место</span>
+                                <span>1</span>
+                                <span class="js-prizes-prize">2 000 000 ₸</span>
+                            </div>
+                            <div class="prizes-table-content" role="row">
+                                <span>3 место</span>
+                                <span>1</span>
+                                <span class="js-prizes-prize">2 000 000 ₸</span>
+                            </div>
+                            <div class="prizes-table-content" role="row">
+                                <span>4 место</span>
+                                <span>1</span>
+                                <span class="js-prizes-prize">2 000 000 ₸</span>
+                            </div>
+                            <div class="prizes-table-content" role="row">
+                                <span>5 место</span>
+                                <span>1</span>
+                                <span class="js-prizes-prize">2 000 000 ₸</span>
+                            </div>
+                            <div class="prizes-table-content" role="row">
+                                <span>6&mdash;25 место</span>
+                                <span>20</span>
+                                <span class="js-prizes-prize">12 000 <img src="/assets/bonus-icon.svg" alt="бонусов"></span>
+                            </div>
+                            <div class="prizes-table-content" role="row">
+                                <span>26&mdash;50 место</span>
+                                <span>25</span>
+                                <span class="js-prizes-prize">12 000 <img src="/assets/bonus-icon.svg" alt="бонусов"></span>
+                            </div>
+                            <div class="prizes-table-content" role="row">
+                                <span>51&mdash;100 место</span>
+                                <span>50</span>
+                                <span class="js-prizes-prize">12 000 <img src="/assets/bonus-icon.svg" alt="бонусов"></span>
+                            </div>
+                        </div>
+                        <img src="/assets/ld-logo.png" srcset="/assets/ld-logo.avif" alt>
+                    </div>
                 </section>
                 <section class="section" id="section6" data-section-name="Инфо" draggable="false">
                     <div class="marker"></div>
@@ -238,8 +295,8 @@
                                     <img src="/assets/accumulator.svg" width="69" alt aria-hidden="true">
                                 </div>
                                 <div class="info-item-text">
-                                    <h3 class="info-item-title">Покупайте</h3>
-                                    <p class="info-item-descr">Покупайте билеты классических&nbsp;лотерей</p>
+                                    <h3 class="info-item-title">Получайте</h3>
+                                    <p class="info-item-descr">Получайте&nbsp;баллы рейтинга&nbsp;за&nbsp;выигрыши</p>
                                 </div>
                             </div>
                             <div class="info-list-item" role="listitem">
@@ -247,8 +304,9 @@
                                     <img src="/assets/finish.svg" width="70" alt aria-hidden="true">
                                 </div>
                                 <div class="info-item-text">
-                                    <h3 class="info-item-title">Покупайте</h3>
-                                    <p class="info-item-descr">Покупайте билеты классических&nbsp;лотерей</p>
+                                    <h3 class="info-item-title">Выигрывайте</h3>
+                                    <p class="info-item-descr">Призовой&nbsp;фонд&nbsp;акции будет&nbsp;распределен
+                                        среди&nbsp;100&nbsp;победителей</p>
                                 </div>
                             </div>
                         </div>

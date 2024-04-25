@@ -61,7 +61,7 @@ slider.addEventListener("scroll", infiniteScroll);
 
 // ---header animations
 
-const header = document.querySelector('header.header');
+const header = document.querySelector('header.inner-header');
 
 const callback = (entries) => {
   entries.forEach((entry) => {
@@ -114,7 +114,7 @@ const mainPageLinkClick = (evt) => {
   slider.classList.remove('no-transition');
 }
 
-mainPageLink.addEventListener('pointerdown', mainPageLinkClick);
+mainPageLink.addEventListener('click', mainPageLinkClick);
 
 // ---------------- burger(-s) 
 

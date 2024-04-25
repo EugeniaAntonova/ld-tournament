@@ -1,5 +1,6 @@
 .inner-section-container {
     margin-top: 72px;
+    padding-inline: 2px;
     padding-top: 40px;
 }
 
@@ -19,16 +20,17 @@
 /* ====================================================================================================== burger-menu */
 .burger-menu menu {
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
     list-style: none;
     display: flex;
     flex-direction: column;
     gap: 1em;
     width: 100%;
+    max-width: 400px;
 }
+
 .burger-menu menu>li {
     width: 100%;
-    margin: 0 auto;
 }
 
 /* ======================================================================================================= main-page */
@@ -46,7 +48,7 @@ section.main-page .inner-wrapper {
     z-index: 2;
 }
 
-.main-page .burger-wrapper, 
+.main-page .burger-wrapper,
 .burger-menu .burger-wrapper {
     height: 72px;
     margin-bottom: 1em;
@@ -55,11 +57,22 @@ section.main-page .inner-wrapper {
     margin-left: auto;
 }
 
+.main-page {
+    inset: 0;
+    padding-top: 60px;
+    padding-inline: 16px;
+    overflow: hidden;
+    background-image: url(../assets/main-bg-x2.png);
+    background-repeat: no-repeat;
+    background-size: 831px 924px;
+    background-position: -214px -296px;
+}
+
 .main-page-decor {
     position: absolute;
     min-width: 770px;
-    top: -414px;
-    left: -217px;
+    top: -247px;
+    left: -173px;
 }
 
 .main-page-bottom {
@@ -111,6 +124,12 @@ section.main-page .inner-wrapper {
     line-height: 1.2;
 }
 
+.info-value {
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 700;
+}
+
 /* ======================================================================================================= rating */
 .winners-container {
     width: 100%;
@@ -134,7 +153,7 @@ ol.rating-list {
 
 ol.rating-list>li {
     padding: 8px 34px 8px 16px;
-    border-radius: 8px;
+    border-radius: 10px;
     overflow: hidden;
     background-color: #27272D;
     border: 1px solid rgba(128 128 159 / .5);
@@ -152,13 +171,14 @@ ol.rating-list>li>.inner {
 }
 
 ol.rating-list>li .nick-wrapper {
-    width: 55%;
+    width: 45%;
+    margin-left: auto;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
 ol.rating-list>li .score-wrapper {
-    min-width: 28%;
+    min-width: 30%;
     margin-left: auto;
 }
 
@@ -187,7 +207,7 @@ ol.rating-list>li .place {
     display: block;
     width: 44px;
     margin: auto 0;
-    margin-right: 28px;
+    margin-right: 22px;
     flex-grow: 0;
     flex-shrink: 0;
     text-align: center;
@@ -253,13 +273,13 @@ ol.rating-list>li:nth-child(-n+5) .winner-avatar {
     left: 0;
     right: 0;
     background-color: #17171B;
-    border: 1px solid #FF3627;
-    border-bottom: none;
-    border-radius: .5em .5em 0 0;
+    border-radius: 10px 10px 0 0;
+    outline: 1px solid #FF3627;
+    outline-offset: -1px;
 
 }
 
-.current-player-title, 
+.current-player-title,
 .current-player-score-wrapper {
     display: flex;
     flex-direction: column;
@@ -272,9 +292,9 @@ ol.rating-list>li:nth-child(-n+5) .winner-avatar {
     color: rgba(255 255 255 / .5);
     font-style: italic;
     margin-bottom: 4px;
-} 
+}
 
-.current-player-score, 
+.current-player-score,
 .current-player-place {
     font-size: 16px;
     font-weight: 800;
@@ -315,8 +335,10 @@ section.winners .winners-container {
     padding-right: 0;
 }
 
-section.winners .title, 
+section.winners .title,
 section.winners-rating .title {
+    margin: 0;
+    margin-bottom: 1em;
     font-size: 17px;
     font-weight: 700;
     font-style: italic;
@@ -362,7 +384,7 @@ section.winners .title::before {
 
 ol.winners-list li.item {
     padding-top: 42px;
-    border-radius: 8px;
+    border-radius: 10px;
     overflow: hidden;
     flex-shrink: 0;
 }
@@ -379,7 +401,7 @@ ol.winners-list li.item .inner {
     background-image: url('../assets/winners-flag.png');
     background-repeat: no-repeat;
     background-position: -74px -119px;
-    border-radius: 8px;
+    border-radius: 10px;
     border: 1px solid #FF3627;
     overflow: hidden;
 }
@@ -438,15 +460,32 @@ ol.winners-list>li .place {
     display: block;
     padding: 1.5em 1em;
     background-color: #27272D;
-    border-radius: 1em;
+    border-radius: 10px;
     border: 1px solid #FF3627;
+    transition: .3s ease-in-out;
 }
+
+@media (hover: hover) {
+
+    .games-item>a:hover,
+    .games-item>a:focus-visible {
+        scale: 1.05;
+        box-shadow: 0 0 15px rgba(255 54 39 / .8);
+    }
+}
+
+.games-item>a:active {
+    scale: .95;
+    box-shadow: 0 0 10px rgba(255 54 39 / 1);
+}
+
 .games-item>a>img {
     display: block;
     flex-shrink: 0;
     width: 120px;
     margin: 0 auto;
 }
+
 /* ======================================================================================================= faq */
 ul.faq-list {
     margin: 0;
@@ -479,28 +518,30 @@ ul.faq-list {
 }
 
 .faq-list>li button {
-    padding: 1em;
     width: 100%;
+    padding: 1em;
+    display: flex;
+    align-items: center;
     font-size: inherit;
     font-weight: 600;
     font-style: italic;
     text-transform: uppercase;
     color: inherit;
+    text-align: left;
     border-radius: 10px;
     background-color: var(--basic-gray);
     border: none;
     border-bottom: 1px solid #fff;
     outline-color: #fff;
     outline-offset: -3px;
-    text-align: left;
-    display: flex;
-    align-items: center;
+    cursor: pointer;
 }
 
 .faq-list>li button>span {
     max-width: 70%;
     pointer-events: none;
 }
+
 .faq-list>li .panel {
     padding: 0 1em;
     max-height: 0;
@@ -526,24 +567,121 @@ ul.faq-list {
     padding: 1em;
 }
 
-/* =================================================================================================== info */
-.info-list {
+/* =================================================================================================== prizes */
+section.prizes .inner-section-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 50px;
+    padding-bottom: 20px;
+}
+
+.prizes-top {
+    margin-bottom: 20px;
+    padding: 1em 1.5em;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    background-color: #27272D;
+    border: 1px solid rgba(128 128 159 / 0.5);
+    border-radius: 10px;
+}
+
+.prizes-top-decor {
+    flex-shrink: 0;
+}
+
+.prizes-top-descr {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    font-style: italic;
+    line-height: 1.35;
+}
+
+.prizes-top-descr>u {
+    text-decoration: none;
+    color: #FF3627;
+}
+
+.prizes-table {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.prizes-table-head,
+.prizes-table-content {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+}
+
+.prizes-table-head {
+    margin-bottom: 10px;
+    padding-inline: 24px;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+}
+
+.prizes-table-content {
+    padding: 16px 22px;
+    border-radius: 10px;
+    background-color: #27272D;
+    border: 1px solid rgba(128 128 159 / 0.5);
+    font-size: 15px;
+    font-style: italic;
+    font-weight: 800;
+
+}
+
+.prizes-table-content:nth-of-type(-n + 6) {
+    border-width: 2px;
+    border-color: #FF3627;
+}
+
+.prizes-table-content:not(:last-of-type) {
+    margin-bottom: 10px;
+}
+
+.prizes-table-head>span:last-of-type,
+.prizes-table-content>span:last-of-type {
+    justify-self: end;
+}
+
+.prizes-table-content>span>img {
+    padding-left: .2ch;
+    vertical-align: text-top;
+}
+
+/* =================================================================================================== info */
+.info-list {
+    width: 100%;
+    max-width: 275px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
 }
 
 .info-list-item {
     display: flex;
-    width: fit-content;
-    justify-content: center;
     align-items: center;
-    gap: 1.5em;
+    gap: 2.5em;
 }
 
-.info-item-text {
-    max-width: min-content;
+.info-item-decor {
+    width: 90px;
+    height: 90px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-item-decor>img {
+    flex-shrink: 0;
 }
 
 .info-item-title {
@@ -566,23 +704,69 @@ ul.faq-list {
 }
 
 
-@media (min-width: 820px) {
+@media (min-width: 630px) {
+
+    .accent-title {
+        font-size: 28px;
+    }
+
+    /* ======================================================================================================= main-page */
+
+    .main-page .burger-wrapper,
+    .burger-menu .burger-wrapper {
+        height: 79px;
+    }
+
+    .main-page {
+        padding-top: 100px;
+        padding-inline: 32px;
+        background-image: linear-gradient(transparent 15%, rgba(0 0 0 / .7)), url(../assets/main-bg-x2.png);
+        background-repeat: no-repeat;
+        background-size: cover, 907px 1000px;
+        background-position: 100% 100%, -119px -295px;
+    }
+
+    .main-page-bottom {
+        padding-block: 44px 144px;
+    }
+
+    .info-item {
+        padding-left: 70px;
+    }
+
+    .info-item::before {
+        width: 60px;
+        height: 46px;
+    }
+
+    .info-title {
+        font-size: 16px;
+        font-weight: 800;
+    }
+
+    .info-value {
+        font-size: 24px;
+    }
 
     .rating-list-wrapper {
         padding-bottom: 90px;
     }
 
     ol.rating-list>li {
-        padding-right: 140px;
+        padding-right: 60px;
     }
-    
+
     ol.rating-list>li:not(:last-child) {
         margin-bottom: 10px;
     }
 
+    ol.rating-list>li .score-wrapper {
+        margin-left: 0;
+    }
+
     ol.rating-list>li .place {
-        font-size: 40px;
-        width: 106px;
+        font-size: 36px;
+        width: 66px;
     }
 
     ol.rating-list>li .label {
@@ -594,12 +778,16 @@ ul.faq-list {
         font-size: 20px;
     }
 
+    ol.rating-list>li:nth-child(-n+5) .winner-avatar {
+        margin-right: 28px;
+    }
+
     ol.rating-list>li:nth-child(-n+5) .place {
         font-size: 36px;
     }
 
     ol.rating-list>li:nth-child(-n+5) {
-        padding-right: 140px;
+        padding-right: 60px;
     }
 
     ol.rating-list>li:nth-child(-n+5)::before {
@@ -611,12 +799,13 @@ ul.faq-list {
         padding: 1em 2em;
     }
 
-    .current-player-title {
-        font-size: 32px;
+    .current-player-label {
+        font-size: 20px;
     }
 
-    .current-player-score {
-        font-size: 20px;
+    .current-player-score,
+    .current-player-place {
+        font-size: 22px;
     }
 
     .current-player-action {
@@ -628,7 +817,17 @@ ul.faq-list {
     /* winners */
     section.winners {
         margin-bottom: 50px;
-        padding-top: 50px;
+    }
+
+    section.winners-rating .title {
+        line-height: 1.35;
+        font-size: 28px;
+    }
+
+    section.winners .title {
+        line-height: 1.35;
+        font-size: 28px;
+        padding-left: 47px;
     }
 
     section.winners .title::before {
@@ -663,42 +862,129 @@ ul.faq-list {
         font-size: 36px;
     }
 
-    /* ====================================================  lotteries */
+    /* ==================================================== lotteries */
     .games-list {
-        padding: 0 24px;
+        padding: 0 14px;
     }
+
     .games-list {
-        gap: 40px;
+        gap: 32px;
     }
-    
-    
+
+
     .games-item>a {
         display: block;
-        padding: 2.5em 2em;
+        padding: 40px 32px;
     }
+
     .games-item>a>img {
         flex-shrink: 0;
-        width: 227px;
+        width: 200px;
     }
+
+    /* ==================================================== faq */
+
+    .faq-list>li>button::after {
+        background-size: 24px 24px;
+    }
+
+    .faq-list>li:not(:last-of-type) {
+        margin-bottom: 24px;
+    }
+
+    .faq-list>li .panel {
+        font-size: 18px;
+    }
+
+    .faq-list>li button {
+        font-size: 18px;
+    }
+
+    /* =================================================================================================== prizes */
+    section.prizes .inner-section-container {
+        padding-bottom: 50px;
+    }
+
+    .prizes-top {
+        padding: 16px 60px;
+        margin-bottom: 32px;
+        gap: 70px;
+    }
+
+    .prizes-top-decor {
+        width: 96px;
+    }
+
+    .prizes-top-descr {
+        margin: 0;
+        font-size: 24px;
+        text-transform: uppercase;
+    }
+
+    .prizes-table {
+        width: 100%;
+        margin-bottom: 32px;
+    }
+
+    .prizes-table-head {
+        margin-bottom: 20px;
+        padding-inline: 32px;
+        font-size: 18px;
+    }
+
+    .prizes-table-content {
+        padding: 24px 28px;
+        font-size: 24px;
+    }
+
+    .prizes-table-content:nth-of-type(-n + 6) {
+        border-width: 2px;
+        border-color: #FF3627;
+    }
+
+    .prizes-table-content:not(:last-of-type) {
+        margin-bottom: 10px;
+    }
+
+    .prizes-table-head>span:last-of-type,
+    .prizes-table-content>span:last-of-type {
+        justify-self: end;
+    }
+
+    .prizes-table-content>span>img {
+        padding-left: .2ch;
+        vertical-align: text-top;
+    }
+
 
     /* ==================================================== info */
     .info-list {
-        gap: 60px;
+        gap: 50px;
+        max-width: 563px;
     }
-    .info-item:nth-child(1).info-item-decor>img {
-        width: 113px;
+
+    .info-item-decor {
+        width: 150px;
+        height: 150px;
     }
-    .info-item:nth-child(2).info-item-decor>img {
-        width: 139px;
+
+    .info-list-item:nth-of-type(1) .info-item-decor>img {
+        width: 103px;
     }
-    .info-item:nth-child(3).info-item-decor>img {
-        width: 141px;
+
+    .info-list-item:nth-of-type(2) .info-item-decor>img {
+        width: 129px;
     }
+
+    .info-list-item:nth-of-type(3) .info-item-decor>img {
+        width: 131px;
+    }
+
     .info-item-title {
-        font-size: 32px;
+        font-size: 28px;
     }
-    
+
     .info-item-descr {
-        font-size: 24px;
+        font-size: 20px;
     }
 }
