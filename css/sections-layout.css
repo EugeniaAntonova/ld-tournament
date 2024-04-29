@@ -511,6 +511,10 @@ ul.faq-list {
     background-position: 50% 50%;
     vertical-align: middle;
     margin-left: auto;
+    transition: rotate .3s ease-in-out;
+}
+.faq-list>li.opened>button::after {
+    rotate: 180deg;
 }
 
 .faq-list>li:not(:last-of-type) {
@@ -650,8 +654,8 @@ section.prizes .inner-section-container {
 }
 
 .prizes-table-content>span>img {
-    padding-left: .2ch;
-    vertical-align: text-top;
+    padding-left: .5ch;
+    vertical-align: baseline;
 }
 
 /* =================================================================================================== info */
@@ -952,8 +956,9 @@ section.prizes .inner-section-container {
     }
 
     .prizes-table-content>span>img {
-        padding-left: .2ch;
-        vertical-align: text-top;
+        width: 25px;
+        padding-left: .5ch;
+        vertical-align: baseline;
     }
 
 
