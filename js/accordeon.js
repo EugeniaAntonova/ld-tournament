@@ -1,3 +1,4 @@
+"use strict";
 const accordeon = document.querySelector('.faq-list');
 
 const closePanel = (item) => {

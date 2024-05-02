@@ -1,3 +1,4 @@
+"use strict";
 const currentPlayerContainer = document.querySelector('#current-player-wrapper');
 const currentPlayerAction = document.querySelector('.current-player-action');
 const currentPlayerScore = document.querySelector('.current-player-score');

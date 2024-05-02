@@ -1,3 +1,4 @@
+"use strict";
 const slider = document.querySelector('#slider');
 const slides = [...slider.children];
 const controls = document.querySelectorAll('.container-controls');

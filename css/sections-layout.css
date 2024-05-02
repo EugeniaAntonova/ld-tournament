@@ -487,6 +487,9 @@ ol.winners-list>li .place {
 }
 
 /* ======================================================================================================= faq */
+section.faq {
+    padding-bottom: 50px;
+}
 ul.faq-list {
     margin: 0;
     padding: 0;
