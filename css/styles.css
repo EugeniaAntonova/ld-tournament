@@ -48,7 +48,8 @@ abbr {
 .site-main-container {
   width: 100%;
   max-width: 690px;
-  height: 100vh;
+  height: calc(100vh - 55px);
+  height: calc(100svh - 55px);
   margin: 0 auto;
   padding: 60px 16px 0;
   position: relative;
@@ -195,5 +196,12 @@ img {
   .main-page,
   .burger-menu {
     top: 100px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .site-main-container {
+    height: calc(100vh - 100px);
+    height: calc(100svh - 100px);
   }
 }

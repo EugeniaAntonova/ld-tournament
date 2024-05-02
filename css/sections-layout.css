@@ -89,11 +89,11 @@ section.main-page .inner-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1.5em;
+    gap: 1em;
 }
 
 .info-item {
-    padding-left: 54px;
+    padding-left: 46px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -112,12 +112,12 @@ section.main-page .inner-wrapper {
     background-position: 50% 50%;
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    background-image: url('/assets/prize-icon.svg');
+    background-image: url('../assets/prize-icon.svg');
 }
 
 .info-title {
-    font-size: .7em;
-    font-weight: 600;
+    font-size: .5em;
+    font-weight: 700;
     text-transform: uppercase;
     color: #A6A6A6;
     letter-spacing: .05em;
@@ -490,6 +490,7 @@ ol.winners-list>li .place {
 section.faq {
     padding-bottom: 50px;
 }
+
 ul.faq-list {
     margin: 0;
     padding: 0;
@@ -516,6 +517,7 @@ ul.faq-list {
     margin-left: auto;
     transition: rotate .3s ease-in-out;
 }
+
 .faq-list>li.opened>button::after {
     rotate: 180deg;
 }
@@ -529,7 +531,7 @@ ul.faq-list {
     padding: 1em;
     display: flex;
     align-items: center;
-    font-size: inherit;
+    font-size: 14px;
     font-weight: 600;
     font-style: italic;
     text-transform: uppercase;
@@ -553,7 +555,12 @@ ul.faq-list {
     padding: 0 1em;
     max-height: 0;
     overflow: hidden;
+    font-size: 14px;
     transition: max-height .5s ease-in-out, padding .5s ease-in-out;
+}
+
+.faq-list>li .panel:is(p, h3, li) {
+    font-size: 14px;
 }
 
 .faq-list>li .panel h3 {
